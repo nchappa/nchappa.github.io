@@ -7,7 +7,7 @@ subtitle: Website is under construction...
 profile:
   align: right
   image: profile_pic.jpg
-  image_circular: false # crops the image to make it circular
+  image_circular: true # crops the image to make it circular
   address: >
     JBHT #447
     227 N Harmon Ave
