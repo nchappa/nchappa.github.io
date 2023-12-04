@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Website is under construction...
+subtitle: 'Exploring the Frontiers:' A Journey Through Computer Vision, Deep Learning, and Innovation
 
 profile:
   align: right
