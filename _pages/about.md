@@ -5,9 +5,9 @@ permalink: /
 subtitle: #Exploring the Frontiers - A Journey Through Computer Vision, Deep Learning, and Innovation
 
 profile:
-  align: right
+  align: left
   image: profile_pic1.JPG
-  image_circular: true # crops the image to make it circular
+  image_circular: false # crops the image to make it circular
   address: >
     JBHT #447
     227 N Harmon Ave
