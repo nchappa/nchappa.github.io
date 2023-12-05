@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Ravi was awarded <b>Charles Morgan Endowed Chair Graduate Fellowship</b>. Congrats! :sparkles:
+Ravi was awarded <b>Charles Morgan Endowed Chair Graduate Fellowship</b>. Congrats! :confetti_ball:

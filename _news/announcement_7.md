@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Ravi's paper was awarded 3rd place at <b>CVSports workshop @CVPR 2023</b>. Congrats! :sparkles:
+Ravi's paper was awarded 3rd place at <b>CVSports workshop @CVPR 2023</b>. :sparkles:
