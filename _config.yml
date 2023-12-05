@@ -261,7 +261,7 @@ display_tags: ['formatting', 'images', 'links', 'math', 'code'] # this tags will
 scholar:
 
   last_name: [Chappa]
-  first_name: [Naga VS] #[Albert, A.]
+  first_name: [Naga VS, Ravi Teja NVS, Ravi Teja Nvs, Naga Venkata Sai Raviteja] #[Albert, A.]
 
   style: apa
   locale: en
