@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Ravi got Master's degree in Computer Engineering from Purdue University! :sparkles:
+Ravi received Master's degree in Computer Engineering from Purdue University!
