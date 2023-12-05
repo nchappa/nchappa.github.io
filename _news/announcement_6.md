@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-A paper has been accepted at <b>CVPRW 2023</b>. Congrats! :sparkles:
+A paper has been accepted at <b>CVPRW 2023</b>. Congrats! :confetti_ball:

@@ -5,5 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Ravi was awarded <b>Reginald R. “Barney” & Jameson A. Baxter Graduate Fellowship</b>. 
-Congrats! :sparkles:
+Ravi was awarded <b>Reginald R. “Barney” & Jameson A. Baxter Graduate Fellowship</b>. :confetti_ball:
