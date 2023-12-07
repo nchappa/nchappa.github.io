@@ -9,14 +9,9 @@ profile:
   image: profile_pic1.JPG
   image_circular: false # crops the image to make it circular
   address: > 
-  JBHT #447
-  
-address_line1: > 
-227 N Harmon Ave
-
-  
-  address_line2: > 
-  Fayetteville, AR 72701
+  <p>JBHT #447 <\p>
+  <p>227 N Harmon Ave <\p>
+  <p>Fayetteville, AR 72701<\p>
 
 news: true  # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
