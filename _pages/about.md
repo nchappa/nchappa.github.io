@@ -1,6 +1,6 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
 subtitle: #Exploring the Frontiers - A Journey Through Computer Vision, Deep Learning, and Innovation
 
