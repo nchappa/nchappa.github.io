@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-A paper has been accepted at <b>The Sixteenth Annual IEEE Green Technologies (GreenTech) Conference</b>. :sparkles:
+A paper has been accepted at <strong>The Sixteenth Annual IEEE Green Technologies (GreenTech) Conference</strong>. :sparkles:

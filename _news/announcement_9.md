@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Ravi crossed 50 citations!!! :star2:
+Ravi crossed <strong>50</strong> citations!!! :star2:

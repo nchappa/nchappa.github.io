@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-REACT paper has been accepted at <b>Machine Vision and Applications Journal</b>! :sparkles:
+<b>REACT</b> paper has been accepted to <strong>Machine Vision and Applications Journal</strong>! :sparkles:
