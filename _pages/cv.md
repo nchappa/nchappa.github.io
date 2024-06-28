@@ -4,5 +4,5 @@ permalink: /cv/
 title: CV
 nav: true
 nav_order: 4
-cv_pdf: chappa_resume_updated.pdf
+cv_pdf: Naga_Chappa_CV_latest.pdf
 ---
