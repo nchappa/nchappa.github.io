@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Ravi started his PhD journey @<b>University of Arkansas</b> uder supervision <u><em>Dr. Khoa Luu</em></u>!
+Ravi started his PhD journey @<b>University of Arkansas</b> under supervision of <u><em>Dr. Khoa Luu</em></u>!
