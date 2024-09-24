@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Ravi is awarded <b>Cora E. Sanders Memorial Graduate Fellowship</b>. :confetti_ball:
+Ravi is awarded <strong>Cora E. Sanders Memorial Graduate Fellowship</strong>. :confetti_ball:
