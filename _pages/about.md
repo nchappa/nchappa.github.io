@@ -9,18 +9,21 @@ profile:
   image: profile_pic1.JPG
   image_circular: false # crops the image to make it circular
   address: > 
-    <p>JBHT #447
-    <p>227 N Harmon Ave
-    <p>Fayetteville, AR 72701
+    <p>Roberts Center for Pediatric Research
+    <p>734 Schuylkill Ave 
+    <p>Philadelphia, PA 19146
 
 news: true  # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-As a **Final Year Ph.D. Candidate** in Computer Engineering at the University of Arkansas, I am actively engaged in cutting-edge research within the <a href="https://uark-cviu.github.io">Computer Vision and Image Understanding Lab</a>, under the mentorship of <a href="https://uark-cviu.github.io/contact.html">Prof. Khoa Luu</a>. Prior to embarking on my doctoral journey, I earned an M.S. in Computer Engineering from Purdue University in May 2020 and a B.Tech in ECE from JNTU-K in April 2018.
+As a **Research Post-Doctoral Fellow in Computational Approaches and Machine Learning** at the <a href="https://www.research.chop.edu/car">Center for Autism Research</a> in the Children's Hospital of Philadelphia, I work under the mentorship of <a href="https://www.research.chop.edu/people/birkan-tunc">Dr. Birkan Tunç</a>, developing innovative computational approaches for autism research. I completed my Ph.D. in Computer Engineering from the University of Arkansas (January 2021 - February 2025), where my dissertation <strong>"Vision-Based Multimodal Approaches in Human Behavior Analysis: Bridging Group Activity Recognition and Healthcare Monitoring"</strong> was conducted under <a href="https://uark-cviu.github.io/contact.html">Prof. Khoa Luu</a> in the <a href="https://uark-cviu.github.io">Computer Vision and Image Understanding Lab</a>.
 
-My research expertise centers on the dynamic intersection of deep learning, machine learning, and their practical applications in the realm of computer vision. With a keen focus on advancing image and video understanding systems, my overarching goal is to cultivate a versatile skill set that seamlessly integrates academic prowess with industry relevance. I aspire to contribute meaningfully as both a proficient engineer and an influential scientist in the field.
+My research expertise encompasses human behavior analysis with multimodal data, visual temporal modeling, vision-language models (VLMs), and foundational models. My work spans applications including group activity recognition, healthcare monitoring, and responsible AI for content moderation. I previously earned an M.S. in Computer Engineering from Purdue University (2020) and a B.Tech in ECE from JNTU-K (2018).
+
+With publications in venues like WACV, CVPR Workshops, and journals including Sensors and IEEE Access, I continue to advance the field by integrating advanced computer vision and deep learning techniques to address real-world challenges in healthcare and beyond.
+
 
 <!--Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
 

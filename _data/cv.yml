@@ -11,7 +11,7 @@
   contents:
     - title: PhD (Computer Engineering)
       institution: University of Arkansas, Fayetteville, USA
-      year: 2021-2025
+      year: Jan. 2021 - Feb. 2025
       description:
         - Tobacco Addiction Intervention using Computer Vision 
         - Human Behaviour Analysis
@@ -20,7 +20,7 @@
         
     - title: MS (Computer Engineering)
       institution: Purdue University, USA
-      year: 2018-2020
+      year: Aug. 2018 - May 2020
       description:
         - Autonomous Embedded Systems
         - Computer Vision on Edge Devices
@@ -28,9 +28,13 @@
 - title: Experience
   type: time_table
   contents:
+    - title: Research Post Doc Fellow - Computational Approaches and Machine Learning
+      institution: Center for Autism Research [CAR] (Working with Dr. Birkan Tunç)
+      year: March 2025 - Present
+
     - title: Graduate Research Assistant
-      institution: CVIU Lab (Working with Dr. Khoa Luu)
-      year: Jan. 2021 - Now
+      institution: CVIU Lab (Worked with Dr. Khoa Luu)
+      year: Jan. 2021 - Feb. 2025
     
        
     - title: Graduate Research Assistant
@@ -39,5 +43,5 @@
 
 
     - title: Instrumentation Engineering Intern
-      institution: Defence Research Development Laboratory, Hyderabad, India
+      institution: Defence Research Development Laboratory, Hyderabad, India (Worked with Samvirth)
       year: May 2017 - July 2017
