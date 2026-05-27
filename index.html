@@ -634,62 +634,52 @@ document.addEventListener('scroll', tick, { passive: true });
 tick();
   
 // ─── News loader ────────────────────────────────────────────────
-const NEWS_COUNT = 24;
-const NEWS_DIR = 'news';
+// ─── News data ──────────────────────────────────────────────────
+// Add new entries at the top. Dates sort automatically.
+const NEWS = [
+  { date: '2026-05-27', text: '🏆 <b>Micro-DualNet</b> received the <a href="assets/img/fg_award.jpeg" target="_blank" rel="noopener" class="news-link"><b>Best Paper Award</b></a> at <b>IEEE FG 2026</b>!' },
+  { date: '2026-04-01', text: '<b>Micro-DualNet</b> paper accepted to <b>IEEE FG 2026</b> in Japan 🌸!' },
+  { date: '2026-02-19', text: 'Received <b>Eagles Autism Foundation grant</b> funding! 🎉' },
+  { date: '2025-03-31', text: 'Started as a <b>Postdoctoral Research Fellow</b> at the Center for Autism Research, CHOP! 🎉' },
+  { date: '2025-02-11', text: '<b>SoGAR</b> paper accepted at <b>IEEE Access 2025</b>! ✨' },
+  { date: '2025-01-31', text: 'Successfully defended my <b>PhD dissertation</b>! 🎓 🎉' },
+  { date: '2025-01-11', text: 'Selected for the <b>Doctoral Consortium</b> at <b>WACV 2025</b>! ✨' },
+  { date: '2024-12-05', text: 'Crossed <b>100</b> citations! 🌟' },
+  { date: '2024-12-03', text: 'Symposium presentation on my social media tobacco addiction prevention research accepted at <b>SRNT 2025</b>! ✨' },
+  { date: '2024-10-28', text: '<b>LiGAR</b> paper accepted at <b>WACV 2025</b>! ✨' },
+  { date: '2024-09-24', text: 'Awarded the <b>Cora E. Sanders Memorial Graduate Fellowship</b>. 🎊' },
+  { date: '2024-07-20', text: '<b>REACT</b> paper accepted to the <b>Machine Vision and Applications Journal</b>! ✨' },
+  { date: '2024-05-22', text: '<b>HAtt-Flow</b> paper accepted to the <b>Sensors Journal</b>! ✨' },
+  { date: '2024-05-12', text: 'Crossed <b>50</b> citations! 🌟' },
+  { date: '2024-02-26', text: 'Paper accepted at the <b>16th Annual IEEE Green Technologies (GreenTech) Conference</b>. ✨' },
+  { date: '2023-08-15', text: 'Awarded the <b>Reginald R. "Barney" & Jameson A. Baxter Graduate Fellowship</b>. 🎊' },
+  { date: '2023-06-19', text: '<b>SPARTAN</b> paper awarded <b>3rd place</b> at the CVSports Workshop @ <b>CVPR 2023</b>! ✨' },
+  { date: '2023-03-31', text: '<b>SPARTAN</b> paper accepted at <b>CVPRW 2023</b>. 🎊' },
+  { date: '2022-08-15', text: 'Awarded the <b>Charles Morgan Endowed Chair Graduate Fellowship</b>. 🎊' },
+  { date: '2021-01-16', text: 'Started my PhD journey at the <b>University of Arkansas</b> under the supervision of <em>Dr. Khoa Luu</em>!' },
+  { date: '2020-05-10', text: 'Received my <b>Master\'s degree</b> in Computer Engineering from <b>Purdue University</b>! 🎊 🎓' },
+];
 
-async function loadNews() {
+function renderNews() {
   const listEl = document.getElementById('news-list');
   if (!listEl) return;
 
-  const fetches = [];
-  for (let i = 1; i <= NEWS_COUNT; i++) {
-    fetches.push(
-      fetch(`${NEWS_DIR}/announcement_${i}.md`)
-        .then(r => r.ok ? r.text() : null)
-        .then(text => text ? parseAnnouncement(text) : null)
-        .catch(() => null)
-    );
-  }
-
-  const items = (await Promise.all(fetches)).filter(Boolean);
-  items.sort((a, b) => b.date - a.date);
-
-  if (!items.length) {
-    listEl.innerHTML = '<li class="news-row"><div class="news-text">No news yet.</div></li>';
-    return;
-  }
-
-  listEl.innerHTML = items.map(item => `
+  const sorted = [...NEWS].sort((a, b) => new Date(b.date) - new Date(a.date));
+  listEl.innerHTML = sorted.map(item => `
     <li class="news-row">
-      <div class="news-date">${formatDate(item.date)}</div>
-      <div class="news-text">${item.body}</div>
+      <div class="news-date">${formatNewsDate(item.date)}</div>
+      <div class="news-text">${item.text}</div>
     </li>
   `).join('');
 }
 
-function parseAnnouncement(text) {
-  const match = text.match(/^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/);
-  if (!match) return null;
-  const [, frontMatter, bodyRaw] = match;
-
-  const dateLine = frontMatter.match(/^date:\s*(.+)$/m);
-  if (!dateLine) return null;
-
-  const dateStr = dateLine[1].trim().replace(' ', 'T').replace(/([+-]\d{2})(\d{2})$/, '$1:$2');
-  const date = new Date(dateStr);
-  if (isNaN(date)) return null;
-
-  const emojiMap = { ':tada:': '🎉', ':star2:': '🌟', ':rocket:': '🚀', ':sparkles:': '✨', ':trophy:': '🏆' };
-  const body = bodyRaw.trim().replace(/:(\w+):/g, (m) => emojiMap[m] || m);
-
-  return { date, body };
+function formatNewsDate(dateStr) {
+  return new Date(dateStr + 'T12:00:00').toLocaleDateString('en-US', {
+    month: 'short', day: 'numeric', year: 'numeric'
+  });
 }
 
-function formatDate(d) {
-  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-}
-
-loadNews();
+renderNews();
 // Reveal on scroll
 const io = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
