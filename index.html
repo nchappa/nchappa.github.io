@@ -26,8 +26,8 @@
     </a>
     <nav class="nav">
       <a href="#about" data-nav>about</a>
-      <a href="#publications" data-nav>publications</a>
       <a href="#news" data-nav>news</a>
+      <a href="#publications" data-nav>publications</a>
       <a href="#cv" data-nav>cv</a>
       <a href="#contact" data-nav>contact</a>
     </nav>
@@ -186,11 +186,12 @@
           <div class="pub-meta">
             <span class="venue">FG 2026</span>
             <span class="year">2026</span>
-            <span>IEEE Int&rsquo;l Conf. on Automatic Face &amp; Gesture Recognition</span>
+            <span class="award">🏆 Best Paper Award · IEEE FG 2026</span>
           </div>
           <div class="pub-actions">
             <a href="https://arxiv.org/abs/2604.21011" target="_blank" rel="noopener">arXiv</a>
             <a href="https://compsygroup.github.io/micro-dual-net/" target="_blank" rel="noopener">Project</a>
+            <a href="assets/img/fg_award.jpeg" target="_blank" rel="noopener" class="award-link">Award</a>
           </div>
         </div>
         <div class="pub-thumb"><img src="assets/img/publication_preview/microdualnet.png" alt=""></div>
@@ -450,40 +451,47 @@
       <h2 class="section-title">What&rsquo;s <em>happening</em>.</h2>
     </div>
 
-    <div class="news-grid">
-      <div class="news-item reveal">
+    <ul class="news-list reveal">
+      <li class="news-row">
+        <div class="news-date">May 26, 2026</div>
+        <div class="news-text">
+          🏆 <b>Micro-DualNet</b> received the <b>Best Paper Award</b> at <b>IEEE FG 2026</b>!
+          <a href="assets/img/fg_award.jpeg" target="_blank" rel="noopener" class="news-link">View certificate ↗</a>
+        </div>
+      </li>
+      <li class="news-row">
         <div class="news-date">Feb 19, 2026</div>
         <div class="news-text">Received <b>Eagles Autism Foundation grant</b> funding! 🎉</div>
-      </div>
-      <div class="news-item reveal">
+      </li>
+      <li class="news-row">
         <div class="news-date">Mar 11, 2025</div>
         <div class="news-text">Started Postdoc journey at <b>Children&rsquo;s Hospital of Philadelphia</b> 🚀</div>
-      </div>
-      <div class="news-item reveal">
+      </li>
+      <li class="news-row">
         <div class="news-date">Feb 12, 2025</div>
         <div class="news-text">Successfully defended <b>PhD dissertation</b>! 🎉</div>
-      </div>
-      <div class="news-item reveal">
+      </li>
+      <li class="news-row">
         <div class="news-date">Oct 18, 2024</div>
         <div class="news-text">Paper accepted at <b>WACV 2025</b>! 🎉</div>
-      </div>
-      <div class="news-item reveal">
+      </li>
+      <li class="news-row">
         <div class="news-date">Jul 10, 2023</div>
         <div class="news-text">Paper accepted at <b>ICCV 2023 Workshop</b>!</div>
-      </div>
-      <div class="news-item reveal">
+      </li>
+      <li class="news-row">
         <div class="news-date">Mar 12, 2023</div>
         <div class="news-text">Paper accepted at <b>CVPR-W 2023</b>!</div>
-      </div>
-      <div class="news-item reveal">
+      </li>
+      <li class="news-row">
         <div class="news-date">Jan 16, 2021</div>
         <div class="news-text">Started PhD journey at <b>University of Arkansas</b> under supervision of <em>Dr. Khoa Luu</em>!</div>
-      </div>
-      <div class="news-item reveal">
+      </li>
+      <li class="news-row">
         <div class="news-date">May 4, 2020</div>
         <div class="news-text">Completed <b>M.S.</b> in Computer Engineering from <b>Purdue University</b>.</div>
-      </div>
-    </div>
+      </li>
+    </ul>
   </div>
 </section>
 
@@ -565,6 +573,11 @@
 
     <div class="cv-block-title reveal" style="margin-top: 80px">Honors</div>
     <div class="honors">
+      <div class="honor reveal">
+        <div class="honor-year">2026</div>
+        <div class="honor-title">🏆 Best Paper Award &mdash; Micro-DualNet</div>
+        <div class="honor-org">IEEE FG 2026 &middot; <a href="assets/img/fg_award.jpeg" target="_blank" rel="noopener" style="color:var(--accent); border-bottom:1px solid var(--accent);">Certificate</a></div>
+      </div>
       <div class="honor reveal">
         <div class="honor-year">2026</div>
         <div class="honor-title">Eagles Autism Foundation Grant</div>
@@ -665,7 +678,7 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
 // Active nav based on section in view
 const navLinks = document.querySelectorAll('.nav a[data-nav]');
-const sections = ['about','publications','news','cv','contact'].map(id => document.getElementById(id));
+const sections = ['about','news','publications','cv','contact'].map(id => document.getElementById(id));
 const navIo = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
