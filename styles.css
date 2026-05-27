@@ -662,6 +662,13 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .news-row .news-link:hover {
   opacity: 0.8;
 }
+.news-loading {
+  padding: 18px 24px;
+  color: var(--muted, #888);
+  font-style: italic;
+  text-align: center;
+  list-style: none;
+}
 
 @media (max-width: 640px) {
   .news-row {
