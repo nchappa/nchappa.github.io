@@ -177,45 +177,8 @@
       <h2 class="section-title">What&rsquo;s <em>happening</em>.</h2>
     </div>
 
-    <ul class="news-list reveal">
-      <li class="news-row">
-        <div class="news-date">May 27, 2026</div>
-        <div class="news-text">
-          🏆 <b>Micro-DualNet</b> received the <a href="assets/img/fg_award.jpeg" target="_blank" rel="noopener" class="news-link"><b>Best Paper Award</b></a> at <b>IEEE FG 2026</b>!
-        </div>
-      </li>
-      <li class="news-row">
-        <div class="news-date">Feb 19, 2026</div>
-        <div class="news-text">Received <b>Eagles Autism Foundation grant</b> funding! 🎉</div>
-      </li>
-      <li class="news-row">
-        <div class="news-date">Mar 11, 2025</div>
-        <div class="news-text">Started Postdoc journey at <b>Children&rsquo;s Hospital of Philadelphia</b> 🚀</div>
-      </li>
-      <li class="news-row">
-        <div class="news-date">Feb 12, 2025</div>
-        <div class="news-text">Successfully defended <b>PhD dissertation</b>! 🎉</div>
-      </li>
-      <li class="news-row">
-        <div class="news-date">Oct 18, 2024</div>
-        <div class="news-text">Paper accepted at <b>WACV 2025</b>! 🎉</div>
-      </li>
-      <li class="news-row">
-        <div class="news-date">Jul 10, 2023</div>
-        <div class="news-text">Paper accepted at <b>ICCV 2023 Workshop</b>!</div>
-      </li>
-      <li class="news-row">
-        <div class="news-date">Mar 12, 2023</div>
-        <div class="news-text">Paper accepted at <b>CVPR-W 2023</b>!</div>
-      </li>
-      <li class="news-row">
-        <div class="news-date">Jan 16, 2021</div>
-        <div class="news-text">Started PhD journey at <b>University of Arkansas</b> under supervision of <em>Dr. Khoa Luu</em>!</div>
-      </li>
-      <li class="news-row">
-        <div class="news-date">May 4, 2020</div>
-        <div class="news-text">Completed <b>M.S.</b> in Computer Engineering from <b>Purdue University</b>.</div>
-      </li>
+    <ul class="news-list reveal" id="news-list">
+      <li class="news-loading">Loading news…</li>
     </ul>
   </div>
 </section>
@@ -669,7 +632,64 @@ function tick() {
 }
 document.addEventListener('scroll', tick, { passive: true });
 tick();
+  
+// ─── News loader ────────────────────────────────────────────────
+const NEWS_COUNT = 24;
+const NEWS_DIR = '_news';
 
+async function loadNews() {
+  const listEl = document.getElementById('news-list');
+  if (!listEl) return;
+
+  const fetches = [];
+  for (let i = 1; i <= NEWS_COUNT; i++) {
+    fetches.push(
+      fetch(`${NEWS_DIR}/announcement_${i}.md`)
+        .then(r => r.ok ? r.text() : null)
+        .then(text => text ? parseAnnouncement(text) : null)
+        .catch(() => null)
+    );
+  }
+
+  const items = (await Promise.all(fetches)).filter(Boolean);
+  items.sort((a, b) => b.date - a.date);
+
+  if (!items.length) {
+    listEl.innerHTML = '<li class="news-row"><div class="news-text">No news yet.</div></li>';
+    return;
+  }
+
+  listEl.innerHTML = items.map(item => `
+    <li class="news-row">
+      <div class="news-date">${formatDate(item.date)}</div>
+      <div class="news-text">${item.body}</div>
+    </li>
+  `).join('');
+}
+
+function parseAnnouncement(text) {
+  const match = text.match(/^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/);
+  if (!match) return null;
+  const [, frontMatter, bodyRaw] = match;
+
+  const dateLine = frontMatter.match(/^date:\s*(.+)$/m);
+  if (!dateLine) return null;
+
+  const dateStr = dateLine[1].trim().replace(' ', 'T').replace(/([+-]\d{2})(\d{2})$/, '$1:$2');
+  const date = new Date(dateStr);
+  if (isNaN(date)) return null;
+
+  const emojiMap = { ':tada:': '🎉', ':star2:': '🌟', ':rocket:': '🚀', ':sparkles:': '✨', ':trophy:': '🏆' };
+  const body = bodyRaw.trim().replace(/:(\w+):/g, (m) => emojiMap[m] || m);
+
+  return { date, body };
+}
+
+function formatDate(d) {
+  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+}
+
+loadNews();
 // Reveal on scroll
 const io = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
